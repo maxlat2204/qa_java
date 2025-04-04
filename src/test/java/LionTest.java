@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 //@RunWith(MockitoJUnitRunner.class)
 public class LionTest {
 
-//    @Spy
+    //    @Spy
     Feline feline = new Feline();
     Lion lion = new Lion(feline);
 
@@ -46,4 +46,5 @@ public class LionTest {
         assertEquals(false, new Lion("Самка").doesHaveMane());
     }
 }
+
 
