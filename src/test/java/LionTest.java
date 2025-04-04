@@ -20,7 +20,6 @@ public class LionTest {
     Lion lion = new Lion(feline);
 
 
-
     @Test
     public void checkGetKittens() throws Exception {
         int kittens1 = lion.getKittens();
@@ -38,5 +37,13 @@ public class LionTest {
         assertThrows(Exception.class, () -> new Lion("Непонятный"));
     }
 
-
+    @Test
+    public void checkMale() throws Exception {
+        assertEquals(true, new Lion("Самец").doesHaveMane());
+    }
+    @Test
+    public void checkFemale() throws Exception {
+        assertEquals(false, new Lion("Самка").doesHaveMane());
+    }
 }
+
