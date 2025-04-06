@@ -9,20 +9,11 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class AnimalTest {
-    @Spy
-    Animal animal;
+//    @Spy
+    Animal animal = new Animal();
 
-    @Test
-    public void checkAnimalGetFoodHerbivore() throws Exception {
-        assertEquals(List.of("Трава", "Различные растения"), animal.getFood("Травоядное"));
-    }
-
-    @Test
-    public void checkAnimalGetFoodPredator() throws Exception {
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), animal.getFood("Хищник"));
-    }
 
     @Test
     public void checkAnimalGetFoodNegativeTest() throws Exception {

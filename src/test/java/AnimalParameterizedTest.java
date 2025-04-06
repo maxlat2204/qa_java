@@ -13,17 +13,17 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class AnimalParameterized {
-    @Rule
-    public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.STRICT_STUBS);
+public class AnimalParameterizedTest {
+//    @Rule
+//    public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.STRICT_STUBS);
+//
+//    @Spy
+    Animal animal = new Animal();
 
-    @Spy
-    Animal animal;
+    private String animalKind;
+    private List<String> expectedEat;
 
-    String animalKind;
-    List<String> expectedEat;
-
-    public AnimalParameterized(String animalKind, List<String> expectedEat) {
+    public AnimalParameterizedTest(String animalKind, List<String> expectedEat) {
         this.animalKind = animalKind;
         this.expectedEat = expectedEat;
     }
@@ -41,4 +41,4 @@ public class AnimalParameterized {
         assertEquals(expectedEat, animal.getFood(animalKind));
     }
 }
-//ПОЧЕМУ ТО ТЕСТЫ ЧЕРЕЗ ПАРАМЕТРИЗИРОВАНЫЙ КЛАСС НЕ ВЛИЯЮТ НА ОЦЕНКУ ПОКРЫТИЯ
+

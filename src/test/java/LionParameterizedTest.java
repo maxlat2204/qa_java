@@ -1,3 +1,4 @@
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,13 +7,14 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class ParametrTestLion {
+public class LionParameterizedTest {
 
-    String sex;
+    private String sex;
     boolean hasMane;
+    Feline feline = new Feline();
 
 
-    public ParametrTestLion(String sex, boolean hasMane) throws Exception {
+    public LionParameterizedTest(String sex, boolean hasMane) throws Exception {
         this.sex = sex;
         this.hasMane = hasMane;
     }
@@ -27,7 +29,7 @@ public class ParametrTestLion {
 
     @Test
         public void checkLion() throws Exception {
-        assertEquals(hasMane, new Lion(sex).doesHaveMane());
+        assertEquals(hasMane, new Lion(sex, feline).doesHaveMane());
     }
 
-}//ПОЧЕМУ ТО ТЕСТЫ ЧЕРЕЗ ПАРАМЕТРИЗИРОВАНЫЙ КЛАСС НЕ ВЛИЯЮТ НА ОЦЕНКУ ПОКРЫТИЯ
+}
